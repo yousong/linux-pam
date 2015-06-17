@@ -336,7 +336,7 @@ static int _do_setpass(pam_handle_t* pamh, const char *forwho,
 	}
 
 	if (on(UNIX_NIS, ctrl) && _unix_comesfromsource(pamh, forwho, 0, 1)) {
-#ifdef HAVE_NIS
+#if defined(HAVE_NIS) && defined(HAVE_RPC_RPC_H)
 	  if ((master=getNISserver(pamh, ctrl)) != NULL) {
 		struct timeval timeout;
 		struct yppasswd yppwd;
