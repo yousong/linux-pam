@@ -45,7 +45,6 @@ XMLS = pam.3.xml pam.8.xml \
 	misc_conv.3.xml pam_misc_paste_env.3.xml pam_misc_drop_env.3.xml \
 	pam_misc_setenv.3.xml
 
-if ENABLE_REGENERATE_MAN
 PAM.8: pam.8
 pam_get_authtok_noverify.3: pam_get_authtok.3
 pam_get_authtok_verify.3: pam_get_authtok.3
@@ -60,4 +59,3 @@ pam_get_item.3: pam_item_types_std.inc.xml pam_item_types_ext.inc.xml
 pam_set_data.3: pam_item_types_std.inc.xml pam_item_types_ext.inc.xml
 pam.conf.5: pam.conf-desc.xml pam.conf-dir.xml pam.conf-syntax.xml
 -include $(top_srcdir)/Make.xml.rules
-endif

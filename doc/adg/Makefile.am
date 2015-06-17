@@ -9,7 +9,6 @@ EXTRA_DIST = $(XMLS)
 XMLS = Linux-PAM_ADG.xml $(shell ls $(srcdir)/pam_*.xml)
 DEP_XMLS = $(shell ls $(top_srcdir)/doc/man/pam_*.xml)
 
-if ENABLE_REGENERATE_MAN
 MAINTAINERCLEANFILES = Linux-PAM_ADG.txt Linux-PAM_ADG.pdf html/*.html
 
 all: Linux-PAM_ADG.txt html/Linux-PAM_ADG.html Linux-PAM_ADG.pdf
@@ -50,8 +49,6 @@ html/Linux-PAM_ADG.html: $(XMLS) $(DEP_XMLS)
 
 distclean-local:
 	-rm -rf html Linux-PAM_ADG.txt Linux-PAM_ADG.pdf
-
-endif
 
 install-data-local:
 	$(mkinstalldirs) $(DESTDIR)$(docdir)

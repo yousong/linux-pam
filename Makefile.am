@@ -4,7 +4,10 @@
 
 AUTOMAKE_OPTIONS = 1.9 gnu dist-bzip2 check-news
 
-SUBDIRS = libpam tests libpamc libpam_misc modules po conf doc examples xtests
+if ENABLE_REGENERATE_MAN
+	MAYBE_DOC = doc
+endif
+SUBDIRS = libpam tests libpamc libpam_misc modules po conf examples xtests $(MAYBE_DOC)
 
 CLEANFILES = *~
 

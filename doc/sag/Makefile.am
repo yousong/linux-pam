@@ -10,7 +10,6 @@ XMLS = Linux-PAM_SAG.xml $(shell ls $(srcdir)/pam_*.xml)
 
 DEP_XMLS = $(shell ls $(top_srcdir)/modules/pam_*/pam_*.xml)
 
-if ENABLE_REGENERATE_MAN
 MAINTAINERCLEANFILES = Linux-PAM_SAG.txt Linux-PAM_SAG.pdf html/*.html
 
 all: Linux-PAM_SAG.txt html/Linux-PAM_SAG.html Linux-PAM_SAG.pdf
@@ -51,7 +50,6 @@ html/Linux-PAM_SAG.html: $(XMLS) $(DEP_XMLS)
 
 distclean-local:
 	-rm -rf html Linux-PAM_SAG.txt Linux-PAM_SAG.pdf
-endif
 
 install-data-local:
 	$(mkinstalldirs) $(DESTDIR)$(docdir)
